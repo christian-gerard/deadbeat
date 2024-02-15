@@ -1,30 +1,40 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
 
   
-
   return (
   <>
+
+
     <Header></Header>
+    
     <Main></Main>
   </>
   
   )
 }
-
 function Header() {
-
 
   return (
     <header class='Header'>
       <h1>DeadBeat</h1>
+
+      <div>
+        <button>Menu</button>
+
+        <button>Profile</button>
+
+        <button>MixTapes</button>
+
+        <button>New Mixtape</button>
+      
+      </div>
+
     </header>
   )
-
 }
-
 function Main() {
   const spotifyUrl = 'https://api.spotify.com/v1/artists/1r93D0anfnfL4M7tYTce0J?si=sO_8_Bx7SMiUVxfATMWnvg'
   const spotifyClientId = 'c8de28af3e044d1285807313a3fe4ae7'
@@ -52,7 +62,7 @@ function Main() {
         })
         .then(resp => resp.json())
         .then(data => {
-          
+
           artistProfile.innerHTML = `
             <h1>${data.name} </h1>
             <h2>Genres${data.genres.map((genre) => `|${genre}|`)}</h2>
@@ -73,6 +83,10 @@ function Main() {
     </main>
 
   )
+}
+function SideBar() {
+
+  return 
 }
 
 export default App;
