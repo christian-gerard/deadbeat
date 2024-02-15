@@ -1,0 +1,18 @@
+.App {
+  
+}
+
+.Header {
+  background:purple;
+  color: red;
+}
+
+.Main {
+  background: lightblue;
+}
+
+.artist-profile-previewimg {
+  width: 10em;
+  height: auto;
+}
+
