@@ -1,10 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
 
   
-
   return (
   <>
     <Header></Header>
@@ -52,7 +51,7 @@ function Main() {
         })
         .then(resp => resp.json())
         .then(data => {
-          
+
           artistProfile.innerHTML = `
             <h1>${data.name} </h1>
             <h2>Genres${data.genres.map((genre) => `|${genre}|`)}</h2>
