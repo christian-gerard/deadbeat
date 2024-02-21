@@ -2,23 +2,98 @@
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-style: normal;
+
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.header {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+
+
+  padding: 20px;
+  
+  background: purple;
+  color: lightcoral;
+  top:0;
 }
 
 .App {
-  
+  top: 0;
+  background:purple;
 }
 
 .Header {
-  background:purple;
-  color: red;
+  background: purple;
+  color: lightcoral;
+  top:0;
+
+  display: flex;
+  flex-direction: row;
+
 }
 
 .Main {
-  background: lightblue;
+  background:black;
+  margin: 25px;
+  color: white;
 }
 
 .artist-profile-previewimg {
   width: 10em;
   height: auto;
+}
+
+#app-title {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+#app-nav {
+  display:flex;
+  justify-content: right;
+  width:100%;
+  right: 0;
+}
+
+.app-nav-button {
+  margin: 20px;
+}
+
+#app-main {
+ 
+  
+  height: 840px;
+  width:100%;
+  background:black;
+  color:white;
+
+  display: flex;
+  flex-direction: row;
+}
+
+#mixtape-container {
+  background: purple;
+  width:20%;
+  margin: 40px;
+}
+
+.mixtape {
+  background: coral;
+  margin:20px;
+}
+
+#friends-feed-container {
+  background:purple;
+  color:white;
+  width: 60%;
+  margin:40px;
 }
 
