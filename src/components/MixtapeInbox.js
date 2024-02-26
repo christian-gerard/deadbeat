@@ -7,7 +7,7 @@ function MixtapeInbox() {
 
     return (
         <div id='mixtape-container'>
-            <h1>Incoming Mixtapes</h1>
+            <h1>Mixtapes</h1>
             <Mixtape />
             <Mixtape />
             <Mixtape />

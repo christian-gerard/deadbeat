@@ -1,8 +1,4 @@
 *{
-  font-family: "Space Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -10,90 +6,121 @@
 
 }
 
-.header {
+body {
+
+  background:black;
+}
+
+form input {
+  margin:10px;
+}
+
+form button {
+  
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+}
+
+#headerNav {
+  position:relative;
   display:flex;
   flex-direction: row;
   align-items: center;
-
-
-  padding: 20px;
-  
   background: purple;
   color: lightcoral;
-  top:0;
-}
 
-.App {
-  top: 0;
-  background:purple;
-}
-
-.Header {
-  background: purple;
-  color: lightcoral;
-  top:0;
-
-  display: flex;
-  flex-direction: row;
+  left:0;
+  right:0;
 
 }
 
-.Main {
-  background:black;
-  margin: 25px;
-  color: white;
+#header-title {
+
+    display:flex;
+    flex-direction: row;
+    margin-left: 40px;
+    color:black;
+    text-decoration: none;
+    letter-spacing: 6px;
+
 }
 
-.artist-profile-previewimg {
-  width: 10em;
+#header-title-name:hover {
+  color:red;
+  text-decoration: line-through;
+
+}
+
+#header-title-emoji {
+  padding-left: 10px;
+  width: 50px;
   height: auto;
-}
-
-#app-title {
-  display:flex;
-  flex-direction: row;
-  align-items: center;
 
 }
 
-#app-nav {
-  display:flex;
-  justify-content: right;
-  width:100%;
+
+#header-buttons {
+
+  color:coral;
+
+  position: absolute;
   right: 0;
+
+  margin-right: 40px;
+
 }
 
-.app-nav-button {
-  margin: 20px;
+#profile-container {
+
+  color:white;
 }
 
-#app-main {
- 
-  
-  height: 840px;
-  width:100%;
+.header-button {
+
+  margin:5px;
+  color:black;
+  text-decoration:none;
+  height: 50px;
+  font-size: 1.25em;
+}
+
+.header-button:hover {
+  color:red;
+  text-decoration: line-through;
+}
+
+.main-container {
+  color: white;
+  margin: 40px;
+
+}
+
+.container {
+
+  background: purple;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+.center {
+  width: 50%;
+  margin: auto;
+
+}
+
+.button {
   background:black;
   color:white;
-
-  display: flex;
-  flex-direction: row;
+  border:none;
 }
 
-#mixtape-container {
-  background: purple;
-  width:20%;
-  margin: 40px;
+.button:hover {
+  color:red;
+
 }
 
-.mixtape {
-  background: coral;
-  margin:20px;
-}
-
-#friends-feed-container {
-  background:purple;
-  color:white;
-  width: 60%;
-  margin:40px;
-}
 

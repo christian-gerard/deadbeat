@@ -1,19 +1,21 @@
 import '../App.css'
+import Profile from './Profile'
+import {NavLink} from 'react-router-dom'
 
 function Header() {
 
 
     return (
-    <header className='header'>
-        <div id='app-title'>
-            <h1>DeadBeat</h1>
-            <h2>💀</h2>
-        </div>
+    <header id='headerNav'>
+            <NavLink to='/' id='header-title'>
+            <h1 id="header-title-name">DeadBeat</h1>
+            <h2 id='header-title-emoji'>💀</h2>
+            </NavLink>
 
-        <div id='app-nav'>
 
-            <button className='app-nav-button'>Deck</button>
-            <button className='app-nav-button'>New Mixtape</button>
+        <div id='header-buttons'>
+
+            <NavLink to='/profile' className='header-button'>Profile</NavLink>
 
         </div>
         
