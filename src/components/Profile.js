@@ -1,50 +1,26 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Header from './Header'
 import Login from './Login'
+import UserData from './UserData'
 // import { useState,useEffect } from 'react'
 
-function Profile({accessToken}) {
+function Profile() {
 
+  const [userData, setUserData] = useState([])
 
-    // const profileUrl = 'https://api.spotify.com/v1/users/christiangerard793'
-    
-    
-    // const [userInfo, setUserInfo] = useState({})
-    // //DOM ELEMENTS
+  const userLoginHandler = (data) => {
+    setUserData(data)
 
-
-
-    // useEffect(() => {
-        
-    //     console.log(accessToken)
-
-
-    //           fetch(profileUrl, {
-    //             headers: {'Authorization': `Bearer ${accessToken}`}
-    //           })
-    //           // .then(resp => resp.json())
-    //           // .then(data => {
-
-    //           //   setUserInfo({
-    //           //       "name": data.display_name,
-    //           //       "profileName": data.id,
-    //           //       // "profilePic": data.images[1].url,
-    //           //       "followers": data.followers
-    //           //   })
-    //           //   .catch(err => console.log(err))
-    //           // })
-            
-
-
-
-    // }, [])
-
+  }
 
     return (
       <>
       <Header />
       <div className='main-container'>
-      <Login />
+
+        {!userData ? <UserData {...userData} /> : <Login userLoginHandler={userLoginHandler} />}
+
+
       
       </div>
       

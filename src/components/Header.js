@@ -2,7 +2,7 @@ import '../App.css'
 import Profile from './Profile'
 import {NavLink} from 'react-router-dom'
 
-function Header() {
+function Header({userData}) {
 
 
     return (
@@ -15,8 +15,11 @@ function Header() {
 
         <div id='header-buttons'>
 
-            <NavLink to='/profile' className='header-button'>Profile</NavLink>
+            
+            <NavLink className='header-button' >Mixtapes</NavLink>
 
+
+            <NavLink to='/profile' className='header-button' id='profile-button'>Profile</NavLink>
         </div>
         
     </header>
