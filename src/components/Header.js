@@ -1,8 +1,9 @@
+
 import '../App.css'
 import Profile from './Profile'
 import {NavLink} from 'react-router-dom'
 
-function Header({userData}) {
+function Header({display_name,external_urls,followers,href,id,images,type,uri}) {
 
 
     return (
@@ -15,11 +16,7 @@ function Header({userData}) {
 
         <div id='header-buttons'>
 
-            
-            <NavLink className='header-button' >Mixtapes</NavLink>
-
-
-            <NavLink to='/profile' className='header-button' id='profile-button'>Profile</NavLink>
+            <NavLink to='/profile' className='header-button'> <img src={images[1].url} className='profile-button'></img> </NavLink>
         </div>
         
     </header>

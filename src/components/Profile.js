@@ -1,29 +1,30 @@
-import React,{useState} from 'react'
+import React, { useState, useContext } from 'react'
+import { useOutletContext } from 'react-router-dom'
 import Header from './Header'
 import Login from './Login'
-import UserData from './UserData'
+
+
 // import { useState,useEffect } from 'react'
 
 function Profile() {
+  const { userData, userLogoutHandler } = useOutletContext()
 
-  const [userData, setUserData] = useState([])
-
-  const userLoginHandler = (data) => {
-    setUserData(data)
-
-  }
+    console.log(userData)
 
     return (
       <>
-      <Header />
-      <div className='main-container'>
+        <div className='container'>
+          <h1>{userData.id}</h1>
+          <h3>{userData.display_name}</h3>
 
-        {!userData ? <UserData {...userData} /> : <Login userLoginHandler={userLoginHandler} />}
+          <img src={userData.images[1].url} id='profile-pic'></img>
+
+          <button >Log Out</button>
+
+        </div>
+          
 
 
-      
-      </div>
-      
       </>
     )
 }

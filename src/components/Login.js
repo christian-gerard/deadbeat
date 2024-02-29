@@ -1,4 +1,5 @@
 import {useState,useEffect} from 'react'
+import { useOutletContext } from 'react-router-dom'
 
 
 
@@ -9,7 +10,7 @@ const spotifyClientSecret = 'e102979c591647628c7d44e56ebf698d'
 
 
 const authUrl = "https://accounts.spotify.com/authorize"
-const redirectUri = "http://localhost:3002/profile"
+const redirectUri = "http://localhost:3000/"
 
 const scopes = ['playlist-modify-private', 'user-top-read']
 const scopesUrlVar = scopes.join('%20')
@@ -69,11 +70,7 @@ function Login({userLoginHandler}) {
         
         <div className='container center'>
             <form onSubmit={handleLogin}>
-                <h1>Login to Spotify 🎧🕸 </h1>
-                <label>Username</label>
-                <input type='text' placeholder='username'></input>
-                <label>Password</label>
-                <input type='text' placeholder='password'></input>
+                <h1>Access Spotify 🎧🕸 </h1>
                 <button className='button' >Login 🩸</button>
             </form>
         </div>
