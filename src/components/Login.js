@@ -31,7 +31,7 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
     return paramsSplitUp
 }
 
-function Login({userLoginHandler}) {
+function Login({userLoginHandler, authParamsHandler}) {
 
         
  
@@ -47,6 +47,7 @@ function Login({userLoginHandler}) {
         if(window.location.hash) {
             const userAuthParams = getReturnedParamsFromSpotifyAuth(window.location.hash)
             console.log(userAuthParams)
+            authParamsHandler(userAuthParams)
             fetch('https://api.spotify.com/v1/me', {
                 method: 'GET',
                 headers:{
@@ -57,7 +58,7 @@ function Login({userLoginHandler}) {
             .then(data => userLoginHandler(data))
         }
         
-
+        console.log('userdata reset')
         
 
     },[])

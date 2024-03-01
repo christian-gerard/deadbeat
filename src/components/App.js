@@ -7,7 +7,9 @@ import Login from './Login'
 
 
 function Main() {
+  const [authParams, setAuthParams] = useState({})
   const [userData, setUserData] = useState([])
+
 
     useEffect(() => {
 
@@ -23,6 +25,11 @@ function Main() {
     const userLogoutHandler = () => {
       setUserData([])
     }
+
+    const authParamsHandler = (auth) => {
+
+      setAuthParams(auth)
+    }
   
 
     return (
@@ -31,9 +38,9 @@ function Main() {
         <Header {...userData} />
         <div className='main-container'>
 
-          { userData.length === 0 ? <Login userLoginHandler={userLoginHandler}/> : 
+          { userData.length === 0 ? <Login userLoginHandler={userLoginHandler} authParamsHandler={authParamsHandler}/> : 
 
-          <Outlet context={{userData, userLoginHandler, userLogoutHandler}} />
+          <Outlet context={{userData, userLoginHandler, userLogoutHandler, authParams}} />
 
           }
           

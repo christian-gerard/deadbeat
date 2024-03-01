@@ -16,7 +16,7 @@ function Header({display_name,external_urls,followers,href,id,images,type,uri}) 
 
         <div id='header-buttons'>
 
-            <NavLink to='/profile' className='header-button'> <img src={images[1].url} className='profile-button'></img> </NavLink>
+            <NavLink to='/profile' className='header-button'> {display_name} </NavLink>
         </div>
         
     </header>
