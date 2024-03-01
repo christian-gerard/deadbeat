@@ -3,6 +3,7 @@ import App from './components/App'
 import Home from './components/Home'
 import Profile from './components/Profile'
 import Login from './components/Login'
+import CdBurner from './components/CdBurner'
 import ErrorPage from './components/ErrorPage'
 
 
@@ -15,6 +16,10 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: 'cdBurner',
+                element: <CdBurner />
             },
             {
                 path: 'profile',

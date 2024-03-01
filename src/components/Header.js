@@ -16,6 +16,8 @@ function Header({display_name,external_urls,followers,href,id,images,type,uri}) 
 
         <div id='header-buttons'>
 
+            <NavLink to='/cdBurner' className='header-button'>Cd Burner</NavLink>
+
             <NavLink to='/profile' className='header-button'> {display_name} </NavLink>
         </div>
         

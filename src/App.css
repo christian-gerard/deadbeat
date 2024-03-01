@@ -151,4 +151,23 @@ form {
   border: red 2px solid;
 }
 
+.playlist-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  border-bottom: 3px solid black;
+}
+
+.playlist-container  img {
+  height: 100px;
+  border: black 3px solid;
+  margin: 20px;
+}
+
+.playlist-container h3 {
+  letter-spacing: 3px;;
+}
+
 

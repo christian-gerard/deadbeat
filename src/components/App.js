@@ -9,13 +9,6 @@ import Login from './Login'
 function Main() {
   const [authParams, setAuthParams] = useState({})
   const [userData, setUserData] = useState([])
-
-
-    useEffect(() => {
-
-
-
-    }, [])
       
     const userLoginHandler = (data) => {
       setUserData(data)

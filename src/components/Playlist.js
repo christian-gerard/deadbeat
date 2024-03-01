@@ -1,14 +1,20 @@
 import Track from './Track'
 
-function Playlist({name,tracks,description}) {
+function Playlist({name,tracks,images,external_urls,description}) {
 
 
 
     return (
-        <div>
-            <h1>{name}</h1>
+        <div className='playlist-container'>
+            
+            <img src={images[0].url}></img>
+            <h3>{name}</h3>
+            <a href={external_urls.spotify} target='_blank'>
+                Link here
+            </a>
             <p>{description}</p>
             <p>Track Count: {tracks.total}</p>
+            
         </div>
     )
 }
