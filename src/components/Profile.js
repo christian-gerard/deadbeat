@@ -15,6 +15,7 @@ function Profile() {
     return (
       <>
         <div className='container'>
+          {userData.images ? <img src={userData.images[1].url}></img> : null}
           <h1>{userData.id}</h1>
           <h3>{userData.display_name}</h3>
           <h3>Followers: {userData.followers.total}</h3>

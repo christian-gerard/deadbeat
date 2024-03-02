@@ -12,7 +12,7 @@ const spotifyClientSecret = 'e102979c591647628c7d44e56ebf698d'
 const authUrl = "https://accounts.spotify.com/authorize"
 const redirectUri = "http://localhost:3000/"
 
-const scopes = ['playlist-modify-private', 'user-top-read']
+const scopes = ['streaming', 'app-remote-control', 'user-read-email', 'user-read-private']
 const scopesUrlVar = scopes.join('%20')
 
 
