@@ -3,8 +3,9 @@ import App from './components/App'
 import Home from './components/Home'
 import Profile from './components/Profile'
 import Login from './components/Login'
-import CdBurner from './components/CdBurner'
+import Search from './components/Search'
 import ErrorPage from './components/ErrorPage'
+import Player from './components/Player'
 
 
 const routes = createBrowserRouter([
@@ -18,8 +19,8 @@ const routes = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: 'cdBurner',
-                element: <CdBurner />
+                path: 'search',
+                element: <Search />
             },
             {
                 path: 'profile',
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
             {
                 path: 'login',
                 element: <Login />
+            },
+            {
+                path: 'player',
+                element: <Player />
             }
         ]
     }
