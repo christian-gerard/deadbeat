@@ -91,6 +91,24 @@ form {
   border-radius: 100%;
 }
 
+#search-filter {
+  background: white;
+  height: 50px;
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#search-filter span {
+  
+  color: black;
+  background: pink;
+  padding: 5px;
+  margin: 10px; 
+}
+
 
 
 .header-button {
@@ -169,5 +187,37 @@ form {
 .playlist-container h3 {
   letter-spacing: 3px;;
 }
+
+.search-container {
+  border: 1px red solid;
+  border-radius: 10px;
+  margin: 5px;
+
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-container img {
+  height: 100px;
+  border-radius: 100%;
+  padding: 20px;
+}
+
+.search-container span {
+  font-size: 5em;
+  height: 100px;
+  border-radius: 100%;
+  padding: 20px;
+}
+.search-bar {
+  height: 3em;
+  width: 40%;
+  font-size: 1em;
+  font-weight: bold;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
 
 

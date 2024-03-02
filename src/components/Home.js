@@ -29,13 +29,13 @@ function Home() {
             return 'Loading...'
 
         } else {
-            console.log(playlists[1])
+
             return playlists.items.map((playlist) => <Playlist key={playlist.id} {...playlist} />)
         }
 
     }, [playlists])
 
-    console.log(renderPlaylists)
+
     
 
 

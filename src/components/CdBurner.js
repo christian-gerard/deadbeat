@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 import { useOutletContext } from 'react-router-dom'
+import SearchResult from './SearchResult'
 
 
 
@@ -8,30 +9,53 @@ import { useOutletContext } from 'react-router-dom'
 function CdBurner() {
     const { authParams } = useOutletContext()
     const [searchParam, setSearchParam] = useState('')
+    const [searchResults, setSearchResults] = useState({})
 
     useEffect(() => {
-        fetch('https://api.spotify.com/v1/search?q=remaster%20track:Runaway%20artist:Kanye&type=track', {
+        fetch(`https://api.spotify.com/v1/search?q=artist:${searchParam}&type=artist`, {
+
             headers: {
                 'Authorization': `Bearer ${authParams.access_token}`
             }
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => setSearchResults(data))
 
 
-    }, [])
+    }, [searchParam])
 
     const handleSearch = (e) => {
-        console.log()
+
         setSearchParam(e.target.value)
     }
+
+    const renderSearch = useMemo(() => {
+        if(Object.keys(searchResults).length === 0) {
+
+            return 'Loading...'
+        } else {
+            if(searchParam) {
+
+                return searchResults.artists.items.map((result) => <SearchResult key={result.id} {...result} />)
+            } else {
+                return null
+            }
+        }
+
+    },[searchResults])
 
 
 
     return (
-        <div>
-            <h1>Cd Burner</h1>
-            <input type='text' name='search' onChange={(e) => handleSearch(e)}></input>
+        <div className='container'>
+            <h1>Search</h1>
+            <div id='search-filter'>
+                <span> X Artist: Kanye West, Caroline Polachek</span>
+                <span> X Album: My Dark Twisted Fantasy</span>
+                
+            </div>
+            <input className='search-bar' placeholder='Search by Artist, Album, or Track'type='text' name='search' onChange={(e) => handleSearch(e)}></input>
+            {renderSearch}
         </div>
     )
 }
