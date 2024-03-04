@@ -30,6 +30,9 @@ form {
   flex-direction: column;
 }
 
+#player {
+  background: black;
+}
 #headerNav {
   position:relative;
   display:flex;

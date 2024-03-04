@@ -9,6 +9,7 @@ import Login from './Login'
 function Main() {
   const [authParams, setAuthParams] = useState({})
   const [userData, setUserData] = useState([])
+  const [nowPlaying, setNowPlaying] = useState()
       
     const userLoginHandler = (data) => {
       setUserData(data)
@@ -33,7 +34,7 @@ function Main() {
 
           { userData.length === 0 ? <Login userLoginHandler={userLoginHandler} authParamsHandler={authParamsHandler}/> : 
 
-          <Outlet context={{userData, userLoginHandler, userLogoutHandler, authParams}} />
+          <Outlet context={{userData, userLoginHandler, userLogoutHandler, authParams, nowPlaying}} />
 
           }
           

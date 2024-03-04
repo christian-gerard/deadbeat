@@ -15,9 +15,10 @@ function Player() {
 
             <h1>PLayer</h1>
 
-            <SpotifyPlayer 
+            <SpotifyPlayer id='player'
             token={authParams.access_token} 
             showSaveIcon 
+            play={true}
             uris={ trackUri ? ['spotify:track:3zbUNw1lvmLMIi3FHPGj8D'] : []}/>
             
         </div>
