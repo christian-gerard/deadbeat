@@ -2,9 +2,6 @@ import {useState,useEffect} from 'react'
 import { useOutletContext } from 'react-router-dom'
 
 
-
-
-
 const spotifyClientId = 'c8de28af3e044d1285807313a3fe4ae7'
 const spotifyClientSecret = 'e102979c591647628c7d44e56ebf698d'
 
@@ -12,9 +9,9 @@ const spotifyClientSecret = 'e102979c591647628c7d44e56ebf698d'
 const authUrl = "https://accounts.spotify.com/authorize"
 const redirectUri = "http://localhost:3000/"
 
+
 const scopes = ['streaming', 'app-remote-control', 'user-read-email', 'user-read-private']
 const scopesUrlVar = scopes.join('%20')
-
 
 
 const getReturnedParamsFromSpotifyAuth = (hash) => {
