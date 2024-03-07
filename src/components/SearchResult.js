@@ -9,7 +9,7 @@ function SearchResult({name,images,external_urls, href}) {
             : 
             <span> 💀 </span> }
             
-            <h4>{name}</h4>
+            <span>{name}</span>
             
         </div>
     )
