@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import '../App.css'
 import Header from './Header'
 import Login from './Login'
+import Player from './Player'
 
 
 
@@ -33,11 +34,13 @@ function Main() {
         <div className='main-container'>
 
           { userData.length === 0 ? <Login userLoginHandler={userLoginHandler} authParamsHandler={authParamsHandler}/> : 
-
+          <>
           <Outlet context={{userData, userLoginHandler, userLogoutHandler, authParams, nowPlaying}} />
 
+          </>
+
           }
-          
+        
 
         </div>
  

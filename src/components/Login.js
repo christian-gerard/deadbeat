@@ -30,14 +30,10 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
 
 function Login({userLoginHandler, authParamsHandler}) {
 
-        
- 
-
     const handleLogin = (e) => {
         e.preventDefault()
         window.location = `${authUrl}?client_id=${spotifyClientId}&redirect_uri=${redirectUri}&scope=${scopesUrlVar}&response_type=token&show_dialog=true`
     }
-
 
     useEffect(() => {
 
@@ -60,20 +56,16 @@ function Login({userLoginHandler, authParamsHandler}) {
 
     },[])
  
-
     return (
         <>
 
-
-        
         <div className='container center'>
             <form onSubmit={handleLogin}>
                 <h1>Access Spotify 🎧🕸 </h1>
                 <button className='button' >Login 🩸</button>
             </form>
         </div>
-        
-        
+
         </>
     )
 }

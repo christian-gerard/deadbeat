@@ -31,7 +31,10 @@ form {
 }
 
 #player {
-  background: black;
+
+  position:fixed;
+  bottom:0px;
+  width:100vw;
 }
 #headerNav {
   position:relative;

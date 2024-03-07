@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { useOutletContext } from 'react-router-dom'
 import SearchResult from './SearchResult'
 import TrackSearchResult from './TrackSearchResult'
+import Player from './Player'
 
 
 
@@ -12,6 +13,7 @@ function Search() {
     const [searchParam, setSearchParam] = useState('')
     const [artistSearchResults, setArtistSearchResults] = useState({})
     const [trackSearchResults, setTrackSearchResults] = useState({})
+    const [trackUri, setTrackUri] = useState([])
 
     useEffect(() => {
         fetch(`https://api.spotify.com/v1/search?q=artist:${searchParam}&type=artist`, {
@@ -41,6 +43,11 @@ function Search() {
         setSearchParam(e.target.value)
     }
 
+    const handleTrack = (track) => {
+
+        setTrackUri([track])
+    }
+
     const renderArtistSearch = useMemo(() => {
         if(Object.keys(artistSearchResults).length === 0) {
 
@@ -64,7 +71,7 @@ function Search() {
         } else {
             if(searchParam) {
 
-                return trackSearchResults.tracks.items.map((result) => <TrackSearchResult key={result.id} {...result}/>)
+                return trackSearchResults.tracks.items.map((result) => <TrackSearchResult key={result.id} {...result} handleTrack={handleTrack}/>)
 
             } else {
 
@@ -77,10 +84,15 @@ function Search() {
 
     
 
-console.log(artistSearchResults,trackSearchResults)
+
 
     return (
+
+        <>
+        <Player trackUri={trackUri}/>
+        
         <div className='container'>
+            
             <h1>Search</h1>
   
             <input className='search-bar' 
@@ -104,7 +116,9 @@ console.log(artistSearchResults,trackSearchResults)
                 </div>
 
             </div>
+            
         </div>
+        </>
     )
 }
 

@@ -1,25 +1,27 @@
 import SpotifyPlayer from 'react-spotify-web-playback'
 import { useOutletContext } from 'react-router-dom'
+import { useState } from 'react'
 
-function Player() {
+function Player({trackUri}) {
 
     const { authParams } = useOutletContext()
 
-    const trackUri = true;
-    console.log(authParams.access_token)
+
 
     if(!authParams.access_token) return null
-
+    console.log(trackUri)
     return (
-        <div>
-
-            <h1>PLayer</h1>
+        <div id='player'>
 
             <SpotifyPlayer id='player'
             token={authParams.access_token} 
-            showSaveIcon 
-            play={true}
-            uris={ trackUri ? ['spotify:track:3zbUNw1lvmLMIi3FHPGj8D'] : []}/>
+
+            play={trackUri ? true : false}
+            uris={trackUri }
+            styles={{
+                bgColor: 'purple'
+            }}
+            />
             
         </div>
     )
