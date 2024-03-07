@@ -19,7 +19,14 @@ function Player({trackUri}) {
             play={trackUri ? true : false}
             uris={trackUri }
             styles={{
-                bgColor: 'purple'
+                bgColor: 'purple',
+                loaderColor: 'red',
+                sliderColor: 'red',
+                activeColor: 'purple',
+                color: 'black',
+                trackArtistColor: 'red',
+                trackNameColor: 'red',
+                sliderTrackColor: 'black'
             }}
             />
             
