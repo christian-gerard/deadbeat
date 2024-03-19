@@ -159,7 +159,7 @@ form {
 
 .main-container {
   color: white;
-  margin: 40px;
+
 
 }
 
@@ -168,6 +168,7 @@ form {
   background: purple;
   padding: 20px;
   border-radius: 10px;
+  margin: 40px;
 
 }
 

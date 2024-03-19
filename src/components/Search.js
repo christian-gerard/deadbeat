@@ -8,7 +8,7 @@ import Player from './Player'
 
 
 
-function Search() {
+function Search({handleTrack}) {
     const { authParams } = useOutletContext()
     const [searchParam, setSearchParam] = useState('')
     const [artistSearchResults, setArtistSearchResults] = useState({})
@@ -43,10 +43,7 @@ function Search() {
         setSearchParam(e.target.value)
     }
 
-    const handleTrack = (track) => {
 
-        setTrackUri([track])
-    }
 
     const renderArtistSearch = useMemo(() => {
         if(Object.keys(artistSearchResults).length === 0) {
@@ -89,7 +86,7 @@ function Search() {
     return (
 
         <>
-        <Player trackUri={trackUri}/>
+
         
         <div className='container'>
             
@@ -104,14 +101,14 @@ function Search() {
 
                 {renderArtistSearch === 0 ? null :
                       <div id='artist-result-container'>
-                      <h2>Artists</h2>
+
                       {renderArtistSearch}
                   </div>
                 }
               
 
                 <div id='track-result-container'>
-                    <h2>Tracks</h2>
+
                     {renderTrackSearch}
                 </div>
 

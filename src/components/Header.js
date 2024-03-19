@@ -16,9 +16,6 @@ function Header({display_name,external_urls,followers,href,id,images,type,uri}) 
 
         <div id='header-buttons'>
 
-            <NavLink to='/search' className='header-button'>Search</NavLink>
-            <NavLink to='/player' className='header-button'>Player</NavLink>
-
             {images ? <NavLink to='/profile' className='header-button'> <img className='profile-button' src={images[1].url}></img> </NavLink> : <NavLink to='/profile' className='header-button'> 💀 </NavLink> }
             
         </div>
