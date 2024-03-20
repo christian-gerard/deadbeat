@@ -15,7 +15,7 @@ function Header({display_name,external_urls,followers,href,id,images,type,uri}) 
 
 
         <div id='header-buttons'>
-
+            <NavLink to='/cdburner' className='header-button'> CD BURNER </NavLink>
             {images ? <NavLink to='/profile' className='header-button'> <img className='profile-button' src={images[1].url}></img> </NavLink> : <NavLink to='/profile' className='header-button'> 💀 </NavLink> }
             
         </div>

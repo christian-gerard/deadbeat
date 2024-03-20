@@ -8,8 +8,8 @@ import Player from './Player'
 
 
 
-function Search({handleTrack}) {
-    const { authParams } = useOutletContext()
+function Search() {
+    const { authParams, handleTrack } = useOutletContext()
     const [searchParam, setSearchParam] = useState('')
     const [artistSearchResults, setArtistSearchResults] = useState({})
     const [trackSearchResults, setTrackSearchResults] = useState({})

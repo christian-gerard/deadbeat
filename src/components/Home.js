@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { useOutletContext } from 'react-router-dom'
+import { Outlet, useOutletContext } from 'react-router-dom'
 import Search from './Search'
 import Player from './Player'
 import { render } from '@testing-library/react'
@@ -8,6 +8,14 @@ import { render } from '@testing-library/react'
 function Home() {
     const { authParams } = useOutletContext()
     const [trackUri, setTrackUri] = useState([])
+    const [burnedcds, setburnedcds] = useState([
+        {
+            artist: 'Arcade Fire',
+            trackUri: null,
+            name: 'Wake Up',
+            album: 'Funeral'
+        }
+    ])
 
     const handleTrack = (track) => {
 
@@ -16,7 +24,8 @@ function Home() {
 
     return (
         <>
-        <Search handleTrack={handleTrack}/>
+
+        <Outlet context={{authParams, handleTrack, burnedcds}}/>
         
         <Player trackUri={trackUri}/>
         
