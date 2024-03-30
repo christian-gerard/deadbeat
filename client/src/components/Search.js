@@ -79,16 +79,16 @@ function Search() {
     },[trackSearchResults])
 
 
-    
+    console.log(artistSearchResults, trackSearchResults)
 
 
 
     return (
 
-        <>
+        <div className='cont-menu'>
 
         
-        <div className='container'>
+        <div className='container search'>
             
             <h1>Search</h1>
   
@@ -115,7 +115,16 @@ function Search() {
             </div>
             
         </div>
-        </>
+
+        <div className='container cd-burner'>
+            <h1>CD Burner</h1>
+                <div>
+                    123123
+                </div>
+
+        </div>
+
+        </div>
     )
 }
 

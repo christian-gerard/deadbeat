@@ -271,5 +271,19 @@ form {
   flex-direction: column;
 }
 
+.cont-menu {
+  display: flex;
+  flex-direction: row;
+  width:100%
+}
+
+.cd-burner {
+  width:50%
+}
+
+.search {
+  width:50%
+}
+
 
 
