@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Outlet, useOutletContext } from 'react-router-dom'
-import Search from './Search'
-import Player from './Player'
+import Search from '../cdBurner/Search'
+import Player from '../../components/Player'
 import { render } from '@testing-library/react'
 
 

@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { useOutletContext } from 'react-router-dom'
 import SearchResult from './SearchResult'
 import TrackSearchResult from './TrackSearchResult'
-import Player from './Player'
+import Player from '../../components/Player'
 
 
 

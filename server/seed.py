@@ -1,19 +1,55 @@
-from app import app, db
-from models import cd, user
 from faker import Faker
+import ipdb
+
+from config import app, db
+from models.user import User
+from models.post import Post
+from models.friendship import Friendship
+
+from rich import print
 
 fake = Faker()
 
-def seed_users(num_users=10):
-    for _ in range(num_users):
-        user = User(username=fake.user_name(), email=fake.email())
-        db.session.add(user)
-    db.session.commit()
 
-def seed_cds(num_cds=100):
-    for _ in range(num_cds):
-        cd = Cd(title=fake.title(), description=fake.description())
+with app.app_context():
 
-if __name__ == '__main__':
-    with app.app_context():
-        seed_users()
+
+    # # # # # BEGIN SEED
+    print('\n[purple]------------- BEGIN ------------[/purple]')
+    print('\n')
+
+           
+
+    # # # # # Clean Database
+    print('[purple]Cleaning Database 🧽 [/purple]...\n')
+    try:
+        User.query.delete()
+        Post.query.delete()
+        Friendship.query.delete()
+        db.session.commit()
+        print('\t[green]Cleaning Complete[/green] ✅\n')
+    except Exception as e:
+        print(f'\t[red]Cleaning Failed[/red] {e} 😞\n')
+
+
+        # # # # # Clean Database
+    print('[purple]Create Users 🧽 [/purple]...\n')
+    try:
+        users = []
+
+        for _ in range(20):
+            pass
+
+
+        Friendship.query.delete()
+        db.session.commit()
+        print('\t[green]Cleaning Complete[/green] ✅\n')
+    except Exception as e:
+        print(f'\t[red]Cleaning Failed[/red] {e} 😞\n')
+
+
+
+
+
+    # # # # # COMPLETE SEED
+    print('[green] ----------- COMPLETE 🏁 ------------ [/green]\n')
