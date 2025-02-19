@@ -1,3 +1,5 @@
 # DeadBeat 💀
-## The music app that spotify is scared of....
+## A Place for AudioPhiles
 
+
+AI Music reccomendations.
